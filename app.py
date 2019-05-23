@@ -60,11 +60,9 @@ app.layout = html.Div([
             ),
             html.Div([
                 html.Div([
-                    html.H2("Dash - Uber Data App", style={'font-family': 'Dosis'}),
+                    html.H2("Uber Data - 2014", style={'font-family': 'Dosis'}),
                 ]),
-                html.P("Select different days using the dropdown and the slider\
-                        below or by selecting different time frames on the\
-                        histogram", className="explanationParagraph twelve columns"),
+                html.P("Select diferent days, using the dropdown or the slider", className="explanationParagraph twelve columns"),
                 dcc.Graph(id='map-graph'),
                 dcc.Dropdown(
                     id='bar-selector',
@@ -110,7 +108,7 @@ app.layout = html.Div([
             step=1,
             value=1
         ),
-        dcc.Markdown("Source: [FiveThirtyEight](https://github.com/fivethirtyeight/uber-tlc-foil-response/tree/master/uber-trip-data)",
+        dcc.Markdown("Source: [UberTripData](https://github.com/fivethirtyeight/uber-tlc-foil-response/tree/master/uber-trip-data)",
                      className="source"),
         dcc.Checklist(
             id="mapControls",
@@ -599,4 +597,4 @@ def defineTotalList():
 
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(port=8080, host='0.0.0.0', debug=True)
